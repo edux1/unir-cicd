@@ -37,19 +37,6 @@ pipeline {
     post {
         success {
             junit 'results/*_result.xml'
-            emailext (
-                subject: "Pipeline unstalbe",
-                body: "The execution of ${env.JOB_NAME} (#${env.BUILD_NUMBER}) SUCCEEDED",
-                to: "edu.pm97@gmail.com"
-            )
-            cleanWs()
-        }
-        unstable {
-            emailext (
-                subject: "Pipeline unstable",
-                body: "The execution of ${env.JOB_NAME} (#${env.BUILD_NUMBER}) was UNSTABLE",
-                to: "edu.pm97@gmail.com"
-            )
             cleanWs()
         }
         failure {
