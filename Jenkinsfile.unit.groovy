@@ -41,7 +41,7 @@ pipeline {
         }
         failure {
             emailext (
-                subject: "Pipeline unstalbe",
+                subject: "Pipeline failed",
                 body: "The execution of ${env.JOB_NAME} (#${env.BUILD_NUMBER}) FAILED",
                 to: "edu.pm97@gmail.com"
             )
