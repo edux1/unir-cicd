@@ -29,9 +29,8 @@ pipeline {
         }
         stage('E2E tests') {
             steps {
-                echo "E2E tests"
-                //sh 'make test-e2e'
-                //archiveArtifacts artifacts: 'results/*.xml'
+                sh 'make test-e2e'
+                archiveArtifacts artifacts: 'results/*.xml'
             }
         }
     }
