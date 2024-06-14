@@ -40,11 +40,11 @@ pipeline {
             cleanWs()
         }
         unstable {
-            emailext subject: "Pipeline unstalbe", body: "The execution #${env.BUILD_NUMBER0} of the job ${env.JOB_NAME} finished its execution with the status UNSTABLE.", to: "eduardo.pinto988@comunidadunir.net"
+            emailext subject: "Pipeline unstalbe", body: "The execution #${env.BUILD_NUMBER0} of the job ${env.JOB_NAME} finished its execution with the status UNSTABLE.", to: "edu.pm97@gmail.com"
             cleanWs()
         }
         failure {
-            emailext subject: "Pipeline error", body: "The execution #${env.BUILD_NUMBER0} of the job ${env.JOB_NAME} finished its execution with the status FAILURE.", to: "eduardo.pinto988@comunidadunir.net"
+            emailext subject: "Pipeline error", body: "The execution #${env.BUILD_NUMBER0} of the job ${env.JOB_NAME} finished its execution with the status FAILURE.", to: "edu.pm97@gmail.com"
             cleanWs()
         }
     }
