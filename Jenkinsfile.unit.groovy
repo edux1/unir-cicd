@@ -35,8 +35,12 @@ pipeline {
         }
     }
     post {
-        always {
+        success {
             junit 'results/*_result.xml'
+            cleanWs()
+        }
+        failure {
+            emailext subject: "Pipeline error", to: "eduardo.pinto988@comunidadunir.net"
             cleanWs()
         }
     }
