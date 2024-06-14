@@ -40,7 +40,7 @@ pipeline {
             cleanWs()
         }
         failure {
-            emailext subject: "Pipeline error", to: "eduardo.pinto988@comunidadunir.net"
+            emailext subject: "Pipeline error", body: "The Pipeline has failed", to: "eduardo.pinto988@comunidadunir.net"
             cleanWs()
         }
     }
