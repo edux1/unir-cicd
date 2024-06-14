@@ -39,8 +39,12 @@ pipeline {
             junit 'results/*_result.xml'
             cleanWs()
         }
+        unstable {
+            emailext subject: "Pipeline unstalbe", body: "The execution #${env.BUILD_NUMBER0} of the job ${env.JOB_NAME} finished its execution with the status UNSTABLE.", to: "eduardo.pinto988@comunidadunir.net"
+            cleanWs()
+        }
         failure {
-            emailext subject: "Pipeline error", body: "The Pipeline has failed", to: "eduardo.pinto988@comunidadunir.net"
+            emailext subject: "Pipeline error", body: "The execution #${env.BUILD_NUMBER0} of the job ${env.JOB_NAME} finished its execution with the status FAILURE.", to: "eduardo.pinto988@comunidadunir.net"
             cleanWs()
         }
     }
